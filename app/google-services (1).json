@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "546648002449",
+    "project_id": "ecomer-aed07",
+    "storage_bucket": "ecomer-aed07.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:546648002449:android:bd221722d7eb3b2a6c1430",
+        "android_client_info": {
+          "package_name": "com.example.giuaki"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1NJpYAoLrLLzgxeIq56pPNYjjYqUpR-c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

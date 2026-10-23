@@ -1,0 +1,18 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "tenSp": "quan zin nam",
+      "loaiSp": "Quan nam",
+      "giaSp": 200000,
+      "image": "https://res.cloudinary.com/px9ptx27/image/upload/v1/samples/ecommerce/analog-clock.jpg"
+    },
+    {
+      "id": "2",
+      "tenSp": "Ap phong nam",
+      "loaiSp": "Thoi trang nu",
+      "giaSp": 300000,
+      "image": "https://res.cloudinary.com/px9ptx27/image/upload/v1/samples/ecommerce/accessories-bag.jpg"
+    }
+  ]
+}

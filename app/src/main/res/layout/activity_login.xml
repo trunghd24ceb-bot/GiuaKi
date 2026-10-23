@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAFAFA"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ECOMER"
+        android:textColor="#2196F3"
+        android:textSize="32sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:text="Đăng nhập &amp; Phân quyền hệ thống"
+        android:textColor="#666666"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/edtEmail"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/bg_input_box"
+        android:hint="Email tài khoản"
+        android:inputType="textEmailAddress"
+        android:paddingHorizontal="12dp"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/edtPassword"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/bg_input_box"
+        android:hint="Mật khẩu"
+        android:inputType="textPassword"
+        android:paddingHorizontal="12dp"
+        android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:backgroundTint="#2196F3"
+        android:text="ĐĂNG NHẬP"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:cornerRadius="6dp" />
+
+    <Button
+        android:id="@+id/btnRegister"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#E0E0E0"
+        android:text="ĐĂNG KÝ TÀI KHOẢN MỚI"
+        android:textColor="#333333"
+        android:textSize="14sp"
+        app:cornerRadius="6dp" />
+
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:textColor="#C62828"
+        android:textSize="13sp"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/btnRetry"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#FF9800"
+        android:text="THỬ LẠI"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:cornerRadius="6dp" />
+</LinearLayout>

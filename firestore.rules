@@ -1,0 +1,47 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function isAdmin() {
+      return signedIn()
+        && exists(/databases/$(database)/documents/users/$(request.auth.uid))
+        && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin';
+    }
+
+    // users/{uid}: a signed-in user may read only their own profile and CREATE it (never update)
+    // with exactly the fields written by LoginActivity: email (string), role == 'user', createdAt.
+    // "create" only applies when the document does not exist, so existing roles can't be overwritten.
+    // Admin is set manually in Firebase Console (role = 'admin'); clients can never change role.
+    match /users/{uid} {
+      allow get: if signedIn() && request.auth.uid == uid;
+      allow list: if false;
+      allow create: if signedIn()
+        && request.auth.uid == uid
+        && request.resource.data.keys().hasOnly(['email', 'role', 'createdAt'])
+        && request.resource.data.keys().hasAll(['email', 'role', 'createdAt'])
+        && request.resource.data.role == 'user'
+        && request.resource.data.email is string
+        && request.resource.data.createdAt == request.time;
+      allow update, delete: if false;
+    }
+
+    // products: any signed-in user reads; only admin writes.
+    match /products/{productId} {
+      allow read: if signedIn();
+      allow create, update: if isAdmin()
+        && request.resource.data.tenSp is string
+        && request.resource.data.loaiSp is string
+        && request.resource.data.giaSp is number
+        && request.resource.data.image is string;
+      allow delete: if isAdmin();
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

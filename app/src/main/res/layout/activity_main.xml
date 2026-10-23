@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#FAFAFA">
+
+    <!-- Top Header Bar with Logout -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Dữ liệu sản phẩm"
+            android:textColor="#333333"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/btnLogout"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Đăng xuất"
+            android:src="@drawable/ic_logout"
+            app:tint="#E53935" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutAdminForm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/edtTen"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/bg_input_box"
+            android:hint="Tên sản phẩm"
+            android:paddingHorizontal="12dp"
+            android:textColor="#000000"
+            android:textSize="15sp" />
+
+        <EditText
+            android:id="@+id/edtLoai"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/bg_input_box"
+            android:hint="Loại sản phẩm"
+            android:paddingHorizontal="12dp"
+            android:textColor="#000000"
+            android:textSize="15sp" />
+
+        <EditText
+            android:id="@+id/edtGia"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/bg_input_box"
+            android:hint="Giá sản phẩm"
+            android:inputType="numberDecimal"
+            android:paddingHorizontal="12dp"
+            android:textColor="#000000"
+            android:textSize="15sp" />
+
+        <!-- Folder / Image Picker Box -->
+        <LinearLayout
+            android:id="@+id/btnChonAnhBox"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/bg_input_box"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="12dp">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_folder"
+                app:tint="#333333" />
+
+            <TextView
+                android:id="@+id/tvTenAnh"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="Chọn hình ảnh..."
+                android:textColor="#666666"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnThem"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:backgroundTint="#2196F3"
+            android:text="THÊM SẢN PHẨM"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:cornerRadius="6dp" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"
+        android:text="Danh sách sản phẩm:"
+        android:textColor="#333333"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/item_product" />
+</LinearLayout>
